@@ -13,6 +13,14 @@ Este projeto é uma API REST desenvolvida em Flask que se integra à API do Open
 - MongoDB
 - Docker
 
+## Obtenção da API Key do OpenWeatherMap
+Para que a aplicação funcione corretamente, é necessário obter uma API Key do OpenWeatherMap.
+
+1. Acesse [OpenWeatherMap](https://openweathermap.org/).
+2. Crie uma conta ou faça login se já tiver uma.
+3. Navegue até a seção de API Keys e gere uma nova chave.
+4. Adicione essa chave à variável `OPENWEATHER_API_KEY` no seu arquivo `.env`.
+
 ## Rotas da API
 
 ### `GET /`
@@ -58,11 +66,16 @@ docker-compose up --build
 
 6. Crie e ative um ambiente virtual:
 ```
-python -m venv venv
-source venv/bin/activate # No Windows use: venv\Scripts\activate
+python3 -m venv venv
+source venv/bin/activate  
+```
+No Windows use:
+```
+python3 -m venv venv
+source venv\Scripts\activate
 ```
 
-7. Instale as dependências:
+1. Instale as dependências:
 ```
 pip install -r requirements.txt
 ```
@@ -74,14 +87,14 @@ pip install -r requirements.txt
 ### Execução
 - Para executar a aplicação localmente:
 ```
-python run.py
+python3 run.py
 ```
 
 
 ## Testes
 Para executar os testes unitários, use o seguinte comando:
 ```
-python -m unittest
+python3 -m unittest discover tests
 ```
 
 ## Collection do Postman
